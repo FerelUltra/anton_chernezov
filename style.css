@@ -1,0 +1,64 @@
+.wrapper {
+    height: 100vh;
+    margin: 0 auto;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    width: 50vw;
+    height: 50vh;
+    display: grid;
+    grid-template-areas: "commentary commentary"
+                            "name secondName"
+                                "email sex"
+                                    "submit submit";
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+.form_inactive{
+    display: none;
+}
+.form__commentary {
+    grid-area: commentary;
+}
+
+.form__name {
+    grid-area: name;
+}
+
+.form__secondName {
+    grid-area: secondName;
+}
+
+.form__sex {
+    grid-area: sex;
+}
+
+.form__submit {
+    grid-area: submit;
+    background-color: blue;
+}
+.result{
+    display: none;
+    width: 50vw;
+    height: 100px;
+    background-color: gold;
+}
+.result_active{
+    display: block;
+}
+@media (max-width: 768px) {
+    .form{
+        grid-template-areas: "commentary"
+                            "name"
+                                "secondName"
+                                    "email"
+                                     "sex"
+                                    "submit";
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+}
